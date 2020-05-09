@@ -25,6 +25,14 @@ export class TimeDisplayComponent implements OnInit {
    timeStart(){
      this.timeInterval = setInterval(()=>{
       this.ms++;
+       if(this.ms === 100){
+         this.ms = 0;
+         this.sec++;
+       }
+       if(this.sec === 60){
+          this.sec = 0;
+          this.min++;
+       }
      },10)
    }
 
