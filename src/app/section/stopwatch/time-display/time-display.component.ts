@@ -16,13 +16,10 @@ export class TimeDisplayComponent implements OnInit {
   timeInterval;
 
   constructor() {
-    console.log(this.inputData)
-    // setInterval(()=>{
-    //   this.test+=1;
-    // },1000)
    }
 
    timeStart(){
+     this.timeStop();
      this.timeInterval = setInterval(()=>{
       this.ms++;
        if(this.ms === 100){
@@ -43,6 +40,8 @@ export class TimeDisplayComponent implements OnInit {
    timeReset(){
      this.timeStop();
      this.ms=0;
+     this.sec=0;
+     this.min=0;
    }
 
    ngOnChanges(changes: SimpleChanges) {
